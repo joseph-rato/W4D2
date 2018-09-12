@@ -1,0 +1,73 @@
+!-- <form action="<%= cat_url(@cat) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  
+  <label>Name</label>
+  <input id="name" type="text" name="cat[name]" value="<%=@cat.name%>">
+  <br>
+  
+  <label>Birth Date</label>
+  <input id="birth_date" type="date" name="cat[birth_date]" value="<%=@cat.birth_date%>">
+  <br>
+  
+  <label>Color</label>
+  <select id="color" name="cat[color]">
+    <option diabled select>--Please Select Color--</option>
+    <option value="Orange"<%=@cat.color == "Orange" ? "selected" : ""  %>>Orange</option>
+    <option value="Black"<%=@cat.color == "Black" ? "selected" : ""  %>>Black</option>
+    <option value="White"<%=@cat.color == "White" ? "selected" : ""  %>>White</option>
+    <option value="Mixed"<%=@cat.color == "Mixed" ? "selected" : ""  %>>Mixed</option>
+  </select>
+  <br>
+  
+  <label>Sex</label>
+  <input id="sex" type="radio" name="cat[sex]" value="F" <%= @cat.sex == 'F' ? 'checked' : '' %>>F
+  <input id="sex" type="radio" name="cat[sex]" value="M" <%= @cat.sex == 'M' ? 'checked' : '' %>>M
+  <br>
+  
+  <label>Description</label>
+  <textarea id="description" name="cat[description]" value="<%=@cat.description%>"></textarea>
+  <br>
+  
+  <input type="submit" value="Change this cat!">
+</form> -->
+
+
+OLD NEW  VVVV
+
+<!-- 
+<form action="<%= cats_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Name</label>
+  <input id="name" type="text" name="cat[name]">
+  <br>
+  
+  <label>Birth Date</label>
+  <input id="birth_date" type="date" name="cat[birth_date]">
+  <br>
+  
+  <label>Color</label>
+  <select id="color" name="cat[color]">
+    <option diabled select>--Please Select Color--</option>
+    <option value="Orange">Orange</option>
+    <option value="Black">Black</option>
+    <option value="White">White</option>
+    <option value="Mixed">Mixed</option>
+  </select>
+  <br>
+  
+  <label>Sex</label>
+  <input id="sex" type="radio" name="cat[sex]" value="M">M
+  <input id="sex" type="radio" name="cat[sex]" value="F">F
+  <br>
+  
+  <label>Description</label>
+  <textarea id="description" name="cat[description]"></textarea>
+  <br>
+  
+  <input type="submit" value="Make this cat!">
+  
+</form> -->
+
+

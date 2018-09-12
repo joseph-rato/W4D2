@@ -1,0 +1,46 @@
+
+
+<% if type == :edit %>
+  <% type_url = cat_url(cat) %>
+<% else %>
+   <% type_url = cats_url %>
+<% end %>
+
+<form action="<%= type_url %>" method="post">
+  <% if type == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  
+  <label>Name</label>
+  <input id="name" type="text" name="cat[name]" value="<%=cat.name%>">
+  <br>
+  
+  <label>Birth Date</label>
+  <input id="birth_date" type="date" name="cat[birth_date]" value="<%=cat.birth_date%>">
+  <br>
+  
+  <label>Color</label>
+  <select id="color" name="cat[color]">
+    <option diabled <%=cat.color ? "" : "selected" %>>--Please Select Color--</option>
+    <option value="Orange"<%=cat.color == "Orange" ? "selected" : ""  %>>Orange</option>
+    <option value="Black"<%=cat.color == "Black" ? "selected" : ""  %>>Black</option>
+    <option value="White"<%=cat.color == "White" ? "selected" : ""  %>>White</option>
+    <option value="Mixed"<%=cat.color == "Mixed" ? "selected" : ""  %>>Mixed</option>
+  </select>
+  <br>
+  
+  <label>Sex</label>
+  <input id="sex" type="radio" name="cat[sex]" value="F" <%= cat.sex == 'F' ? 'checked' : '' %>>F
+  <input id="sex" type="radio" name="cat[sex]" value="M" <%= cat.sex == 'M' ? 'checked' : '' %>>M
+  <br>
+  
+  <label>Description</label>
+  <textarea id="description" name="cat[description]"><%=cat.description%></textarea>
+  <br>
+  
+  <input type="submit" value_change="<%= (type == :edit) ? 'Change that Cat!' : 'Make that Cat!' %>">
+  
+</form>
